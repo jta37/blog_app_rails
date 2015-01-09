@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# Typhoeus runs HTTP requests in parallel. Use with Alchemy API calls
+gem "typhoeus"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
