@@ -1,0 +1,16 @@
+<div class="col-md-12">
+	<h1>A Blog About Blogging Apps</h1>
+	<p> Straight Pimpin'</p>
+</div>
+
+<div class="container">
+	<% @articles.each do |article| %>
+		<p><%= link_to article.title, article_path(article.id) %></p>
+
+		<p>Title: <%= article.title %>  </p>
+		<p>Author: <%= article.author %></p>
+		<p>Description: <%= article.description %></p>
+
+		<%= button_to "Delete", article, method: :delete %>
+	<% end %>
+</div>
