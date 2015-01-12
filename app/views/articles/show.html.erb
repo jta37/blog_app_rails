@@ -1,8 +1,27 @@
 <div class="container">
-    <div>
-    		<%= link_to "EDIT", edit_article_path( @article ) %>
-        <p>Title: <%= @article.title %></p> <br>
-        <p>Author: <%= @article.author %></p> <br>
-        <p>Description: <%=  @article.description %></p>
-    </div>
+	<div class="row">
+		<div class="col-md-4">
+			<h4> Keywords </h4>
+			<p>
+				<%= @article.description %>
+			</p>
+			<div>
+				<%= @blogKeywords %>
+			</div>
+			<h3> Extracted Keywords </h3>
+				<% @blogKeywords.each do | keyword | %>
+					<div><h7> <%= keyword["text"] %> </h7>
+								<%= keyword["relevance"] %>
+							 
+					</div>
+				<% end %>
+			
+		</div>
+  	<div class="col-md-8">
+  		<%= link_to "EDIT", edit_article_path( @article ) %>
+      <p>Title: <%= @article.title %></p> <br>
+      <p>Author: <%= @article.author %></p> <br>
+      <p>Description: <%=  @article.description %></p>
+  	</div>
+  </div>
 </div>

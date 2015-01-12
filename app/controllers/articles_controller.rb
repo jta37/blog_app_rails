@@ -15,10 +15,17 @@ class ArticlesController < ApplicationController
   	redirect_to article_path(article.id)
   end
 
+  # def show
+  # 	id = params[:id]
+  # 	@article = Article.find(id)
+  # 	render :show
+  # end
+
   def show
-  	id = params[:id]
-  	@article = Article.find(id)
-  	render :show
+    @article = Article.find(params[:id])
+    @blogKeywords = @article.make_request
+    # blogKeywords = @article.find(params[:description])
+    render :show
   end
 
   def edit
@@ -38,4 +45,6 @@ class ArticlesController < ApplicationController
   	article.destroy
   	redirect_to articles_path
   end
+
+
 end
