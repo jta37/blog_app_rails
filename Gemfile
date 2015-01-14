@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Typhoeus runs HTTP requests in parallel. Use with Alchemy API calls
 gem "typhoeus"
-
+# JSON parser for the Alchemy response object
 gem "json"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -26,6 +26,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# hide api keys and secret info
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="col-md-4">
 	<% @articles.each do |article| %>
-		<p><%= link_to article.title, article_path(article.id) %></p>
+		<p><%= link_to article.title.titleize, article_path(article.id) %></p>
 
 		<p>Title: <%= article.title %>  </p>
 		<p>Author: <%= article.author %></p>

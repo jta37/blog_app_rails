@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+
+	# before_filter :find_article, except: [:index, :new, :create]
+	
   def index
   	@articles = Article.all
   	render :index
@@ -23,8 +26,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    # calls the make_request method in Article model.
     @blogKeywords = @article.make_request
-    # blogKeywords = @article.find(params[:description])
     render :show
   end
 
